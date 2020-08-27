@@ -1,5 +1,5 @@
 import { Injectable, OnInit } from "@angular/core";
-import { createConnection, Connection, ConnectionOptions, Repository } from "typeorm";
+import { createConnection, Connection, Repository } from "typeorm";
 import { DB_PATH } from "./db-path";
 import { Company } from "./entity/company.entity";
 
@@ -9,13 +9,12 @@ let connection: Connection;
   providedIn: "root",
 })
 export class DaoService {
-  private readonly options: ConnectionOptions;
   constructor() {
-    getRepository();
+    getRepogitory();
   }
 }
 
-async function getRepository(): Promise<Repository<Company>> {
+export async function getRepogitory(): Promise<Repository<Company>> {
   if (connection === undefined) {
     connection = await createConnection({
       type: "sqlite",
