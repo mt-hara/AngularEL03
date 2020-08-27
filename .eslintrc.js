@@ -36,6 +36,9 @@ module.exports = {
         ecmaVersion: 6,
         sourceType: "module",
       },
+      rules: {
+        "no-unused-vars": "warn",
+      },
     },
   ],
 };

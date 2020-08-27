@@ -1,4 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+html {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "游ゴシック体", "YuGothic", "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic",
+    "メイリオ", Roboto, "Helvetica Neue", sans-serif;
+}
+.expanded-toolbar {
+  justify-content: space-between;
+}
