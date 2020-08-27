@@ -1,0 +1,60 @@
+{
+  // html formatter setting(vscode default)
+  "html.format.enable": true,
+  "html.format.indentInnerHtml": true,
+  "html.format.indentHandlebars": true,
+  "html.format.extraLiners": "head, body, /html",
+  "html.format.wrapAttributes": "auto",
+  "html.format.endWithNewline": false,
+  "html.format.preserveNewLines": true,
+  "emmet.variables": {
+    "lang": "ja"
+  },
+  // LiveServer Setting
+  "liveServer.settings.CustomBrowser": "chrome",
+  "liveServer.settings.multiRootWorkspaceName":"settings.json",
+  "liveServer.settings.useBrowserPreview": true,
+  "browser-preview.startUrl": "",
+
+  // editor 自動フォーマット設定
+  "editor.formatOnType": false,
+  // "editor.formatOnSave": false,
+  "eslint.enable": true,
+  "eslint.run": "onType",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  // CSS fileExtensions
+  // "css.fileExtensions": [
+  //   "css",
+  //   "scss"
+  // ],
+  "eslint.options": {
+    "extensions":[".ts",".html"]
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter",
+    "editor.formatOnSave": true
+  },
+  "css.fileExtensions": [
+    "css",
+    "scss"
+  ],
+  "editor.tokenColorCustomizations": {
+    "comments": "#29ff03"
+  },
+  "window.autoDetectColorScheme": true,
+  "htmlScss.isAngularProject": true,
+  "workbench.colorTheme": "Monokai Mega",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.preferredDarkColorTheme": "Monokai Mega",
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "javascript.implicitProjectConfig.experimentalDecorators": true
+  // "htmlScss.globalStyles": []
+  // "html-css-class-completion.includeGlobPattern": "**/*.{css,scss,html}"
+    // node.js module intellisense settring
+  // "node-module-intellisense.scanBuiltinModules": true,
+  // "node-module-intellisense.scanDevDependencies": false,
+  // "node-module-intellisense.scanFileModules": false,
+  // "node-module-intellisense.modulePaths": ["${workspaceFolder}"]
+}
