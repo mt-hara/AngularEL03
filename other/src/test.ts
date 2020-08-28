@@ -1,16 +1,11 @@
-import { getUserRepository, User } from "./index";
+// import {Component } from "@angular/core";
+import { DaoService } from "../../src/app/dao/dao.service";
+import { Company } from "../../src/app/dto/company.dto";
 
-export async function gettter() {
-  try {
-    const repository = await getUserRepository();
-    const user = new User();
-    user.name = "test";
-    user.age = 20;
-    const result = await repository.save(user);
-    console.log("sccess");
-  } catch (e) {
-    throw e;
+export class main {
+  companys: Company[] = [];
+  constructor(daoservice: DaoService) {
+    this.getAll();
   }
+  getAll() {}
 }
-
-gettter();

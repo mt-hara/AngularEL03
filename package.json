@@ -36,7 +36,8 @@
     "electron:dev": "cross-env NODE_EMV=\"development\" electron .",
     "dev:start": "run-s build:dev:all electron:dev",
     "build:win": "npm run build:prod:all && electron-builder --win --x64",
-    "package": "electron-packager ./dist myapp --platform=win32 --arch=all --out=release --overwrite --electron-version=9.2.1 --asar"
+    "package": "electron-packager ./dist myapp --platform=win32 --arch=all --out=release --overwrite --electron-version=9.2.1 --asar",
+    "get":"ts-node ./other/src/test.ts"
   },
   "private": true,
   "dependencies": {
