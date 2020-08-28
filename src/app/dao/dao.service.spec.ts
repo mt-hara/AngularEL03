@@ -1,8 +1,8 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed } from "@angular/core/testing";
 
-import { DaoService } from './dao.service';
+import { DaoService } from "./dao.service";
 
-describe('DaoService', () => {
+describe("DaoService", () => {
   let service: DaoService;
 
   beforeEach(() => {
@@ -10,7 +10,7 @@ describe('DaoService', () => {
     service = TestBed.inject(DaoService);
   });
 
-  it('should be created', () => {
+  it("should be created", () => {
     expect(service).toBeTruthy();
   });
 });
