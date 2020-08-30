@@ -1,5 +1,5 @@
-export interface ICompany {
-  id: number;
+export interface Company {
+  ID: number;
   NUMDAT1: string;
   NUMDAT2: string;
   NUMDAT3: string;
