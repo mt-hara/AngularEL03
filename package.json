@@ -37,7 +37,7 @@
     "dev:start": "run-s build:dev:all electron:dev",
     "build:win": "npm run build:prod:all && electron-builder --win --x64",
     "package": "electron-packager ./dist myapp --platform=win32 --arch=all --out=release --overwrite --electron-version=9.2.1 --asar",
-    "get":"ts-node ./src/app/database/connectionTetst.ts"
+    "get": "ts-node ./src/app/database/connectionTetst.ts"
   },
   "private": true,
   "dependencies": {
@@ -72,7 +72,7 @@
     "@babel/core": "^7.11.4",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
-    "@types/node": "^12.11.1",
+    "@types/node": "^12.12.54",
     "@types/webpack": "^4.41.21",
     "@typescript-eslint/eslint-plugin": "3.9.0",
     "@typescript-eslint/parser": "3.9.0",

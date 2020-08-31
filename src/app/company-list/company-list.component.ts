@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Company } from "../database/entity/company";
+import { CompanyService } from "../database/company.service";
 
 @Component({
   selector: "app-company-list",
@@ -7,7 +7,9 @@ import { Company } from "../database/entity/company";
   styleUrls: ["./company-list.component.scss"],
 })
 export class CompanyListComponent implements OnInit {
-  constructor() {}
+  constructor(companyService: CompanyService) {
+    const repository = companyService.getRepository();
+  }
 
   ngOnInit(): void {}
 }

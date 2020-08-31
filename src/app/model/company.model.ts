@@ -1,4 +1,4 @@
-export class Company {
+export interface ICompany {
   ID: number;
   NUMDAT1: string;
   NUMDAT2: string;
