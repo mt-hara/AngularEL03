@@ -1,7 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Company } from "../dao/entity/company.entity";
-import { DaoService } from "../dao/dao.service";
-import { ICompany } from "../dto/company.dto";
+import { Company } from "../database/entity/company";
 
 @Component({
   selector: "app-company-list",
