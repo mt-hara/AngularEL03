@@ -1,4 +1,4 @@
-export interface Company {
+export class Company {
   ID: number;
   NUMDAT1: string;
   NUMDAT2: string;

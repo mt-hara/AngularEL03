@@ -37,7 +37,7 @@
     "dev:start": "run-s build:dev:all electron:dev",
     "build:win": "npm run build:prod:all && electron-builder --win --x64",
     "package": "electron-packager ./dist myapp --platform=win32 --arch=all --out=release --overwrite --electron-version=9.2.1 --asar",
-    "get":"ts-node ./src/app/dao/dbtest.ts"
+    "get":"ts-node ./src/app/database/connectionTetst.ts"
   },
   "private": true,
   "dependencies": {
