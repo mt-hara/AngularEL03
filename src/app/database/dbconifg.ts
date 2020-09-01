@@ -1,5 +1,6 @@
 import { ConnectionOptions } from "typeorm";
 import { Company } from "./entity/company";
+
 export const options: ConnectionOptions = {
   type: "sqlite",
   // database: "\\\\192.168.10.3/グローバル調達g/97.ACCESS/sqlite3db/testdb.sqlite",

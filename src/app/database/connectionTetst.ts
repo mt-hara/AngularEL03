@@ -1,42 +1,48 @@
-import { createConnection, Connection, ConnectionOptions, getConnection } from "typeorm";
+// export interface PeriodicElement {
+//   name: string;
+//   position: number;
+//   weight: number;
+//   symbol: string;
+// }
+
+// const ELEMENT_DATA: PeriodicElement[] = [
+//   { position: 1, name: "Hydrogen", weight: 1.0079, symbol: "H" },
+//   { position: 2, name: "Helium", weight: 4.0026, symbol: "He" },
+//   { position: 3, name: "Lithium", weight: 6.941, symbol: "Li" },
+//   { position: 4, name: "Beryllium", weight: 9.0122, symbol: "Be" },
+//   { position: 5, name: "Boron", weight: 10.811, symbol: "B" },
+//   { position: 6, name: "Carbon", weight: 12.0107, symbol: "C" },
+//   { position: 7, name: "Nitrogen", weight: 14.0067, symbol: "N" },
+//   { position: 8, name: "Oxygen", weight: 15.9994, symbol: "O" },
+//   { position: 9, name: "Fluorine", weight: 18.9984, symbol: "F" },
+//   { position: 10, name: "Neon", weight: 20.1797, symbol: "Ne" },
+// ];
+
+// const dataSuroce = ELEMENT_DATA;
+
+// console.log(dataSuroce);
+
+import { createConnection, Connection } from "typeorm";
+import { ICompany } from "../model/company.model";
 import { Company } from "./entity/company";
 import { options } from "./dbconifg";
 
-// const option: ConnectionOptions = {
-//   type: "sqlite",
-//   database: "\\\\192.168.10.3/グローバル調達g/97.ACCESS/sqlite3db/testdb.sqlite",
-// database: "\\\\192.168.24.1/group/グローバル調達G/99.database/testdb.sqlite",
-// database: "C:\\workspace/testdb.sqlite",
-//   synchronize: false,
-//   entities: [__dirname + "/entity/*{.js,.ts}"],
-// };
+async function show() {
+  const connection = await createConnection(options);
+  const compRepository = await connection.getRepository(Company);
+  const compList = await compRepository.find();
 
-const main2 = async () => {
-  await createConnection(options);
-};
-// async function main() {
-//   const connection: Connection = await createConnection(options);
-// const companyRepository = connection.getRepository(Company);
-// const result = await companyRepository.find();
-// console.log(result);
+  console.log(compList);
+}
+
+// export class TestGetter {
+//   public dataSource: ICompany[];
+//   constructor(companyService: CompanyService) {
+//     this.dataSource = companyService.getCompanyList();
+//   }
+// public show(): void {
+//   console.log(this.dataSource);
+// }
 // }
 
-async function sub() {
-  await main2();
-  const compRepository = await getConnection().getRepository(Company);
-  const result = await compRepository.find();
-  console.log(result);
-  console.log("end");
-}
-
-async function search() {
-  await main2();
-  const company = await getConnection()
-    .getRepository(Company)
-    .createQueryBuilder("company")
-    .where("company.id=:id", { id: 1 })
-    .getOne();
-  console.log(company.NUMDAT1);
-}
-
-search().catch(console.error);
+show();
