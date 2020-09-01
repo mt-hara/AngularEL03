@@ -22,7 +22,7 @@
 
 // console.log(dataSuroce);
 
-import { createConnection, Connection } from "typeorm";
+import { createConnection, Connection, getRepository, Repository } from "typeorm";
 import { ICompany } from "../model/company.model";
 import { Company } from "./entity/company";
 import { options } from "./dbconifg";
@@ -44,5 +44,3 @@ async function show() {
 //   console.log(this.dataSource);
 // }
 // }
-
-show();
