@@ -8,6 +8,7 @@ import { Company } from "./entity/company";
 export class DatabaseService {
   public connection: Promise<Connection>;
   private readonly options: ConnectionOptions;
+  public companys: Promise<Company[]>;
   constructor() {
     this.options = {
       type: "sqlite",
@@ -21,4 +22,11 @@ export class DatabaseService {
 
     this.connection = createConnection(this.options);
   }
+  // getAllComanyList() {
+  //   this.connection
+  //     .then((connection) => connection.getRepository(Company))
+  //     .then((repository) => {
+  //       this.companys = repository.find();
+  //     });
+  // }
 }

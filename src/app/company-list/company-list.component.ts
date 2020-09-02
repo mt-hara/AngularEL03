@@ -10,10 +10,12 @@ import { Company } from "../database/entity/company";
 export class CompanyListComponent {
   public title = "Company list";
   companys: Company[];
+
   displayedColumns: string[] = ["id", "NUMDAT1", "NUMDAT2", "NUMDAT3", "NUMDAT4", "NUMDAT5", "NUMDAT6", "NUMDAT7"];
 
   constructor(private databaseService: DatabaseService) {
-    this.getCompanrys();
+    // this.getCompanrys();
+    this.getcompanyRepository();
   }
 
   getCompanrys() {
@@ -21,6 +23,14 @@ export class CompanyListComponent {
       .then(() => Company.find())
       .then((companys) => {
         this.companys = companys;
+      });
+  }
+  getcompanyRepository() {
+    this.databaseService.connection
+      .then((connection) => connection.getRepository(Company))
+      .then((repostitory) => repostitory.find())
+      .then((result) => {
+        this.companys = result;
       });
   }
 }
