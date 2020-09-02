@@ -1,14 +1,14 @@
 import { Injectable } from "@angular/core";
 import { Connection, createConnection, ConnectionOptions } from "typeorm";
 import { Company } from "./entity/company";
-
+import { ICompany } from "../model/company.model";
 @Injectable({
   providedIn: "root",
 })
 export class DatabaseService {
   public connection: Promise<Connection>;
   private readonly options: ConnectionOptions;
-  public companys: Promise<Company[]>;
+  public companys: Promise<ICompany[]>;
   constructor() {
     this.options = {
       type: "sqlite",

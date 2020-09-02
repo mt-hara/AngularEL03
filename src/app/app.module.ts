@@ -19,9 +19,10 @@ import { MatMenuModule } from "@angular/material/menu";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { MatTableModule } from "@angular/material/table";
 import { CompanyListComponent } from "./company-list/company-list.component";
+import { CompanyDetailComponent } from "./company-detail/company-detail.component";
 
 @NgModule({
-  declarations: [AppComponent, CompanyListComponent],
+  declarations: [AppComponent, CompanyListComponent, CompanyDetailComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

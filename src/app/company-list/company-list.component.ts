@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { DatabaseService } from "../database/database.service";
 import { Company } from "../database/entity/company";
+import { ICompany } from "../model/company.model";
 
 @Component({
   selector: "app-company-list",
@@ -9,7 +10,7 @@ import { Company } from "../database/entity/company";
 })
 export class CompanyListComponent {
   public title = "Company list";
-  datasource: Company[];
+  datasource: ICompany[];
 
   displayedColumns: string[] = ["id", "NUMDAT1", "NUMDAT2", "NUMDAT3", "NUMDAT4", "NUMDAT5", "NUMDAT6", "NUMDAT7"];
 
