@@ -9,7 +9,7 @@ import { Company } from "../database/entity/company";
 })
 export class CompanyListComponent {
   public title = "Company list";
-  companys: Company[];
+  datasource: Company[];
 
   displayedColumns: string[] = ["id", "NUMDAT1", "NUMDAT2", "NUMDAT3", "NUMDAT4", "NUMDAT5", "NUMDAT6", "NUMDAT7"];
 
@@ -22,7 +22,7 @@ export class CompanyListComponent {
     this.databaseService.connection
       .then(() => Company.find())
       .then((companys) => {
-        this.companys = companys;
+        this.datasource = companys;
       });
   }
   getcompanyRepository() {
@@ -30,7 +30,7 @@ export class CompanyListComponent {
       .then((connection) => connection.getRepository(Company))
       .then((repostitory) => repostitory.find())
       .then((result) => {
-        this.companys = result;
+        this.datasource = result;
       });
   }
 }

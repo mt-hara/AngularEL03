@@ -1,23 +1,40 @@
 <p>{{title}}</p>
-<!-- {{companys}} -->
-<table>
-  <tr>
-    <th>id</th><th>numdat1</th><th>numdat2</th><th>numdat3</th><th>numdat4</th><th>numdat5</th><th>numdat6</th><th>numdat7</th>
-  </tr>
-  <tr *ngFor="let company of companys">
-    <td>{{company.ID}}</td>
-    <td>{{company.NUMDAT1}}</td>
-    <td>{{company.NUMDAT2}}</td>
-    <td>{{company.NUMDAT3}}</td>
-    <td>{{company.NUMDAT4}}</td>
-    <td>{{company.NUMDAT5}}</td>
-    <td>{{company.NUMDAT6}}</td>
-    <td>{{company.NUMDAT7}}</td>
-  </tr>
-</table>
-<!-- <table mat-table [dataSource]="companys" class="mat-elevation-z8">
-  <ng-container matColumnDef="Id">
-    <th mat-header-cell *matHeaderCellDef>Id</th>
-    <td mat-cell *matCellDef="let element">{{element.Id}}</td>
+
+<table mat-table [dataSource]="datasource" class="mat-elevation-z8">
+  <!-- Id column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>id</th>
+    <td mat-cell *matCellDef="let Company">{{Company.id}}</td>
   </ng-container>
-</table> -->
+  <ng-container matColumnDef="NUMDAT1">
+    <th mat-header-cell *matHeaderCellDef>NUMDAT1</th>
+    <td mat-cell *matCellDef="let Company">{{Company.NUMDAT1}}</td>
+  </ng-container>
+  <ng-container matColumnDef="NUMDAT2">
+    <th mat-header-cell *matHeaderCellDef>NUMDAT2</th>
+    <td mat-cell *matCellDef="let Company">{{Company.NUMDAT2}}</td>
+  </ng-container>
+  <ng-container matColumnDef="NUMDAT3">
+    <th mat-header-cell *matHeaderCellDef>NUMDAT3</th>
+    <td mat-cell *matCellDef="let Company">{{Company.NUMDAT3}}</td>
+  </ng-container>
+  <ng-container matColumnDef="NUMDAT4">
+    <th mat-header-cell *matHeaderCellDef>NUMDAT4</th>
+    <td mat-cell *matCellDef="let Company">{{Company.NUMDAT4}}</td>
+  </ng-container>
+  <ng-container matColumnDef="NUMDAT5">
+    <th mat-header-cell *matHeaderCellDef>NUMDAT5</th>
+    <td mat-cell *matCellDef="let Company">{{Company.NUMDAT5}}</td>
+  </ng-container>
+  <ng-container matColumnDef="NUMDAT6">
+    <th mat-header-cell *matHeaderCellDef>NUMDAT6</th>
+    <td mat-cell *matCellDef="let Company">{{Company.NUMDAT6}}</td>
+  </ng-container>
+  <ng-container matColumnDef="NUMDAT7">
+    <th mat-header-cell *matHeaderCellDef>NUMDAT7</th>
+    <td mat-cell *matCellDef="let Company">{{Company.NUMDAT7}}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
