@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-import { CompanyService } from "../database/company.service";
-import { ICompany } from "../model/company.model";
+import { DatabaseService } from "../database/database.service";
+import { Company } from "../database/entity/company";
+
 @Component({
   selector: "app-company-list",
   templateUrl: "./company-list.component.html",
@@ -8,16 +9,22 @@ import { ICompany } from "../model/company.model";
 })
 export class CompanyListComponent {
   public title = "Company list";
-  public dataSpurce: ICompany[];
-  displayedColumns: string[];
-  connectstr: string;
-  repostr: string;
-  liststr: string;
-  constructor(companryService: CompanyService) {
-    this.dataSpurce = companryService.getCommany();
-    this.connectstr = companryService.connectstr;
-    this.repostr = companryService.repostr;
-    this.liststr = companryService.liststr;
-    this.displayedColumns = ["id", "NUMDAT1", "NUMDAT2", "NUMDAT3", "NUMDAT4", "NUMDAT5", "NUMDAT6", "NUMDAT7"];
+  namdat: Company[];
+  namdattest;
+
+  displayedColumns: string[] = ["id", "NUMDAT1", "NUMDAT2", "NUMDAT3", "NUMDAT4", "NUMDAT5", "NUMDAT6", "NUMDAT7"];
+
+  constructor(private databaseService: DatabaseService) {
+    // this.namdat = this.databaseService.connection;
+    this.getCompanrys();
+    this.namdattest = Object.values(this.namdat);
+  }
+
+  getCompanrys() {
+    this.databaseService.connection
+      .then(() => Company.find())
+      .then((companys) => {
+        this.namdat = companys;
+      });
   }
 }

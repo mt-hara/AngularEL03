@@ -22,25 +22,41 @@
 
 // console.log(dataSuroce);
 
-import { createConnection, Connection, getRepository, Repository } from "typeorm";
-import { ICompany } from "../model/company.model";
-import { Company } from "./entity/company";
-import { options } from "./dbconifg";
+// type: "sqlite",
+// database: "C:\\workspace/testdb.sqlite",
+// synchronize: false,
+// entities: [Company],
+// logging: false,
 
-async function show() {
-  const connection = await createConnection(options);
-  const compRepository = await connection.getRepository(Company);
-  const compList = await compRepository.find();
+// import "reflect-metadata";
+// import { createConnection, Connection, ConnectionOptions } from "typeorm";
+// import { Company } from "./entity/company";
 
-  console.log(compList);
-}
-
-// export class TestGetter {
-//   public dataSource: ICompany[];
-//   constructor(companyService: CompanyService) {
-//     this.dataSource = companyService.getCompanyList();
+// export class TestConnet {
+//   // public connnection: Connection;
+//   public repository: any;
+//   private options: ConnectionOptions;
+//   // public repository:Repository;
+//   constructor() {
+//     this.options = {
+//       type: "sqlite",
+//       database: "C:\\workspace/testdb.sqlite",
+//       synchronize: true,
+//       entities: [Company],
+//       logging: false,
+//     };
+//     const connection = createConnection(this.options);
+//     this.repository = connection.getRepository(Company);
 //   }
-// public show(): void {
-//   console.log(this.dataSource);
 // }
-// }
+
+// const repo = new TestConnet();
+// const result = repo.repository.find();
+
+// type: "sqlite",
+// database: "\\\\192.168.10.3/グローバル調達g/97.ACCESS/sqlite3db/testdb.sqlite",
+// database:"\\\\192.168.10.3/グローバル調達g外部共有/99.database",
+// database: "\\\\192.168.24.1/group/グローバル調達G/99.database/testdb.sqlite",
+// database: "C:\\workspace/testdb.sqlite",
+// synchronize: false,
+// entities: [Company],
