@@ -9,22 +9,18 @@ import { Company } from "../database/entity/company";
 })
 export class CompanyListComponent {
   public title = "Company list";
-  namdat: Company[];
-  namdattest;
-
+  companys: Company[];
   displayedColumns: string[] = ["id", "NUMDAT1", "NUMDAT2", "NUMDAT3", "NUMDAT4", "NUMDAT5", "NUMDAT6", "NUMDAT7"];
 
   constructor(private databaseService: DatabaseService) {
-    // this.namdat = this.databaseService.connection;
     this.getCompanrys();
-    this.namdattest = Object.values(this.namdat);
   }
 
   getCompanrys() {
     this.databaseService.connection
       .then(() => Company.find())
       .then((companys) => {
-        this.namdat = companys;
+        this.companys = companys;
       });
   }
 }

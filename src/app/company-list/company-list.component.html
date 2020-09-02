@@ -1,5 +1,20 @@
 <p>{{title}}</p>
-{{namdattest}}
+<!-- {{companys}} -->
+<table>
+  <tr>
+    <th>id</th><th>numdat1</th><th>numdat2</th><th>numdat3</th><th>numdat4</th><th>numdat5</th><th>numdat6</th><th>numdat7</th>
+  </tr>
+  <tr *ngFor="let company of companys">
+    <td>{{company.ID}}</td>
+    <td>{{company.NUMDAT1}}</td>
+    <td>{{company.NUMDAT2}}</td>
+    <td>{{company.NUMDAT3}}</td>
+    <td>{{company.NUMDAT4}}</td>
+    <td>{{company.NUMDAT5}}</td>
+    <td>{{company.NUMDAT6}}</td>
+    <td>{{company.NUMDAT7}}</td>
+  </tr>
+</table>
 <!-- <table mat-table [dataSource]="companys" class="mat-elevation-z8">
   <ng-container matColumnDef="Id">
     <th mat-header-cell *matHeaderCellDef>Id</th>
