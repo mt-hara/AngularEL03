@@ -20,9 +20,10 @@ import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { MatTableModule } from "@angular/material/table";
 import { CompanyListComponent } from "./company-list/company-list.component";
 import { CompanyDetailComponent } from "./company-detail/company-detail.component";
+import { CompanyTopComponent } from "./company-top/company-top.component";
 
 @NgModule({
-  declarations: [AppComponent, CompanyListComponent, CompanyDetailComponent],
+  declarations: [AppComponent, CompanyListComponent, CompanyDetailComponent, CompanyTopComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

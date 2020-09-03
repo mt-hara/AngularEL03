@@ -9,6 +9,8 @@ table {
   // position: fixed;
 }
 .main-container {
-  height: 100%;
+  top: 100px;
+  height: calc(100vh -100px);
+  position: sticky;
   overflow: auto;
 }
