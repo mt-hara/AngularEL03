@@ -9,7 +9,7 @@ import { ICompany } from "../model/company.model";
   styleUrls: ["./company-list.component.scss"],
 })
 export class CompanyListComponent {
-  public title = "Company list";
+  public title = "訪問先リスト";
   datasource: ICompany[];
 
   displayedColumns: string[] = ["id", "NUMDAT1", "NUMDAT2", "NUMDAT3", "NUMDAT4", "NUMDAT5", "NUMDAT6", "NUMDAT7"];

@@ -1,4 +1,5 @@
 <!-- header -->
+<div>
 <mat-toolbar color="primary" class="expanded-toolbar">
   <span>{{title}}</span>
   <span class="toolbar-spacer"></span>
@@ -6,14 +7,14 @@
     <mat-icon>exit_to_app</mat-icon>
   </button>
 </mat-toolbar>
-
+</div>
 <!-- side menu contents -->
   <mat-sidenav-container class="nav-container">
 
     <!-- side menu list -->
-  <mat-sidenav mode="side" class="nav-list" opened>
+  <mat-sidenav #sizenav mode="side" class="nav-list" opened [fixedInViewport]="true" [fixedTopGap]>
     <mat-nav-list>
-      <a mat-list-item>List 1</a>
+      <a mat-list-item>訪問先リスト</a>
       <a mat-list-item>List 2</a>
       <a mat-list-item>List 3</a>
       <a mat-list-item>List 4</a>
