@@ -5,6 +5,7 @@ import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgxElectronModule } from "ngx-electron";
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { LayoutModule } from "@angular/cdk/layout";
 import { FormsModule } from "@angular/forms";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatSidenavModule } from "@angular/material/sidenav";
@@ -20,16 +21,28 @@ import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { MatTableModule } from "@angular/material/table";
 import { CompanyListComponent } from "./company-list/company-list.component";
 import { CompanyDetailComponent } from "./company-detail/company-detail.component";
-import { CompanyTopComponent } from "./company-top/company-top.component";
+import { NavigationComponent } from "./navigation/navigation.component";
+import { TableComponent } from "./table/table.component";
+import { MatPaginatorModule } from "@angular/material/paginator";
+import { MatSortModule } from "@angular/material/sort";
+import { DashboardComponent } from "./dashboard/dashboard.component";
 
 @NgModule({
-  declarations: [AppComponent, CompanyListComponent, CompanyDetailComponent, CompanyTopComponent],
+  declarations: [
+    AppComponent,
+    CompanyListComponent,
+    CompanyDetailComponent,
+    NavigationComponent,
+    TableComponent,
+    DashboardComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     NgxElectronModule,
     FlexLayoutModule,
+    LayoutModule,
     FormsModule,
     MatToolbarModule,
     MatSidenavModule,
@@ -43,6 +56,8 @@ import { CompanyTopComponent } from "./company-top/company-top.component";
     MatMenuModule,
     MatProgressSpinnerModule,
     MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

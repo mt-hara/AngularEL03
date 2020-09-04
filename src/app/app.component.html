@@ -1,5 +1,5 @@
 <!-- header -->
-<div>
+<!-- <div>
 <mat-toolbar color="primary" class="expanded-toolbar">
   <span>{{title}}</span>
   <span class="toolbar-spacer"></span>
@@ -7,12 +7,12 @@
     <mat-icon>exit_to_app</mat-icon>
   </button>
 </mat-toolbar>
-</div>
+</div> -->
 <!-- side menu contents -->
-  <mat-sidenav-container class="nav-container">
+  <!-- <mat-sidenav-container class="nav-container"> -->
 
     <!-- side menu list -->
-  <mat-sidenav  mode="side" opened >
+  <!-- <mat-sidenav  mode="side" opened >
     <mat-nav-list>
       <a mat-list-item>訪問先リスト</a>
       <a mat-list-item>List 2</a>
@@ -20,14 +20,17 @@
       <a mat-list-item>List 4</a>
       <a mat-list-item>List 5</a>
     </mat-nav-list>
-  </mat-sidenav>
+  </mat-sidenav> -->
 
   <!-- main contents -->
-  <mat-sidenav-content>
+  <!-- <mat-sidenav-content> -->
     <!-- <span> -->
-      <app-company-top></app-company-top>
+      <!-- <app-company-list></app-company-list> -->
     <!-- </span> -->
-  </mat-sidenav-content>
+  <!-- </mat-sidenav-content>
 </mat-sidenav-container>
 
-<router-outlet></router-outlet>
+<router-outlet></router-outlet> -->
+<app-navigation>
+  <router-outlet></router-outlet>
+</app-navigation>
