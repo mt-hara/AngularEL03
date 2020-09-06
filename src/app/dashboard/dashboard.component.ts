@@ -1,14 +1,14 @@
 import { Component, OnInit } from "@angular/core";
 import { map } from "rxjs/operators";
 import { Breakpoints, BreakpointObserver } from "@angular/cdk/layout";
-
+import { CommonService } from "../common.service";
 @Component({
   selector: "app-dashboard",
   templateUrl: "./dashboard.component.html",
   styleUrls: ["./dashboard.component.scss"],
 })
-export class DashboardComponent {
-  public title: string = "Dashboard page";
+export class DashboardComponent implements OnInit {
+  public subTitle: string = "Dashboard page";
 
   /** Based on the screen size, switch from standard to one column per row */
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
@@ -31,5 +31,11 @@ export class DashboardComponent {
     })
   );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(private breakpointObserver: BreakpointObserver, private commonService: CommonService) {
+    this.commonService.setSubTitle(this.subTitle);
+  }
+
+  ngOnInit() {
+    this.commonService.setSubTitle(this.subTitle);
+  }
 }

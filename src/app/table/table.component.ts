@@ -3,7 +3,7 @@ import { MatPaginator } from "@angular/material/paginator";
 import { MatSort } from "@angular/material/sort";
 import { MatTable } from "@angular/material/table";
 import { TableDataSource, TableItem } from "./table-datasource";
-import { Output, EventEmitter } from "@angular/core";
+import { CommonService } from "../common.service";
 
 @Component({
   selector: "app-table",
@@ -15,14 +15,18 @@ export class TableComponent implements AfterViewInit, OnInit {
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatTable) table: MatTable<TableItem>;
   dataSource: TableDataSource;
-  public title: string = "table page ";
-  @Output() event = new EventEmitter<string>();
+  Subtitle: string = "table page ";
+
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ["id", "name"];
 
+  constructor(private commonService: CommonService) {
+    this.commonService.setSubTitle("table test");
+  }
+
   ngOnInit() {
     this.dataSource = new TableDataSource();
-    this.event.emit(this.title);
+    this.commonService.setSubTitle(this.Subtitle);
   }
 
   ngAfterViewInit() {

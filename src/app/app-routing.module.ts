@@ -4,7 +4,7 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
 import { TableComponent } from "./table/table.component";
 
 const routes: Routes = [
-  { path: ".", redirectTo: "/dashboard", pathMatch: "full" },
+  { path: "", redirectTo: "/table", pathMatch: "full" },
   { path: "dashboard", component: DashboardComponent },
   { path: "table", component: TableComponent },
 ];

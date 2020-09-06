@@ -1,35 +1,18 @@
 import { Injectable } from "@angular/core";
-import { Subject } from "rxjs";
 
 @Injectable({
   providedIn: "root",
 })
 export class CommonService {
-  /**
-   * データの変更を通史するオブジェクト
-   * @private
-   * @memberof CommonService
-   */
-
-  private sharedDataSource = new Subject<string>();
-
-  /**
-   * Subsrcibeをするためのプロパティ
-   * コンポーネント間で共有するプロパティ
-   * @memberof CommonService
-   */
-
-  public sharedDataSource$ = this.sharedDataSource.asObservable();
+  subTitle: string;
 
   constructor() {}
 
-  /**
-   * データ更新イベント
-   * @param {string} updated 更新データ
-   * @memberof CommonService
-   */
+  setSubTitle(param: string) {
+    this.subTitle = param;
+  }
 
-  public onNotifySharedDataChanged(updated: string) {
-    this.sharedDataSource.next(updated);
+  getSubTitle() {
+    return this.subTitle;
   }
 }
