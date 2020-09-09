@@ -31,6 +31,17 @@
 </mat-sidenav-container>
 
 <router-outlet></router-outlet> -->
+<div>
+<mat-toolbar color="primary" class="expanded-toolbar">
+  <span>{{title}}</span>
+  <span class="toolbar-spacer"></span>
+  <button mat-icon-button class="material-icons" aria-label="Exit">
+    <mat-icon>exit_to_app</mat-icon>
+  </button>
+</mat-toolbar>
+</div>
+<div>
 <app-navigation>
   <router-outlet></router-outlet>
 </app-navigation>
+</div>
